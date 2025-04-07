@@ -135,7 +135,7 @@ class ForceMove:
         clear_axes = "".join([a for a in "xyz" if a in clear])
         logging.info("SET_KINEMATIC_POSITION pos=%.3f,%.3f,%.3f clear=%s",
                      x, y, z, clear_axes)
-        toolhead.set_position([x, y, z, curpos[3]], homing_axes="xyz")
+        toolhead.set_position([x, y, z], homing_axes="xyz")
         toolhead.get_kinematics().clear_homing_state(clear_axes)
 
 def load_config(config):
